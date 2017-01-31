@@ -4732,5 +4732,6 @@ describe('TicTacToe', () => {
             expect(game.getCurrentPlayerSymbol()).to.equal('o')
 
         });
+
     });
 });
