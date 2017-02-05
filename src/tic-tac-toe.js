@@ -51,13 +51,22 @@ class TicTacToe {
         }
 
         // diagonals
-        if (this._field[0][0] == this._field[1][1] && this._field[0][0] == this._field[2][2]) {
-            return this._field[0][0];
+        for (var i = 1; i < FIELD_SIZE; i++)
+        {
+            if ((this._field[0][0] != this._field[i][i]) || !this._field[0][0]) {
+                break;
+            }
+            if (i === FIELD_SIZE - 1) { return this._field[0][0];}
         }
 
-        if  (this._field[0][2] == this._field[1][1] && this._field[0][2] == this._field[2][0]) {
-            return this._field[0][2];
+        for (var i = 1; i < FIELD_SIZE; i++)
+        {
+            if ((this._field[0][FIELD_SIZE - 1] != this._field[i][FIELD_SIZE - 1 - i]) || !this._field[0][FIELD_SIZE - 1]) {
+                break;
+            }
+            if (i === FIELD_SIZE - 1) { return this._field[0][FIELD_SIZE - 1];}
         }
+
         return null;
     }
 
